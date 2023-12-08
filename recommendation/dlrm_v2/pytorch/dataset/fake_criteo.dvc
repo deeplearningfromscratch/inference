@@ -1,0 +1,6 @@
+outs:
+- md5: 1e6f6e79df978412d371924cea07f154.dir
+  size: 186783994
+  nfiles: 3
+  hash: md5
+  path: fake_criteo
