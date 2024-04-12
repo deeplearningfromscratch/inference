@@ -1,0 +1,1992 @@
+# --weight_calib_method AMAX_SYM --weight_dtype int8 --act_calib_method MINMAX_ASYM --act_dtype int8 --weight_nbits 8 --act_nbits 8 --weight_granularity channel --act_granularity channel --is_dynamic_quant False --disable_input False --disable_output False
+quantized op list:
+  transformer_wte:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.wte._input_quantizer
+        input_dtype: torch.int64
+        input_shape:
+        - 1
+        - 1422
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.wte._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 50401
+        - 4096
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  transformer_h_0_ln_1:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.ln_1._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_attn_q_proj:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.q_proj._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.q_proj._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 4096
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_attn_k_proj:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.k_proj._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.k_proj._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 4096
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_attn_v_proj:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.v_proj._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.v_proj._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 4096
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_attn_out_proj:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.out_proj._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.attn.out_proj._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 4096
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_mlp_fc_in:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.mlp.fc_in._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.mlp.fc_in._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 16384
+        - 4096
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_h_0_mlp_fc_out:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: int8
+      axis: 2
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.mlp.fc_out._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: int8
+      axis: 0
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.h.0.mlp.fc_out._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 4096
+        - 16384
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: max
+        calibrator_method: amax
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  transformer_ln_f:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: transformer.ln_f._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  lm_head:
+    output_shape:
+    - 1
+    - 1
+    - 1422
+    - 50401
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: lm_head._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1
+        - 1422
+        - 4096
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_weight:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: lm_head._weight_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 50401
+        - 4096
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  sub:
+    output_shape:
+    - 1
+    - 1
+    - 1
+    - 1422
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: sub._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: sub._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1
+        - 1
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul:
+    output_shape:
+    - 1
+    - 1
+    - 1
+    - 1422
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1
+        - 1
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  add:
+    output_shape:
+    - 0
+    - 0
+    - 0
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  add_1:
+    output_shape:
+    - 0
+    - 0
+    - 0
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_1._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_1._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  add_2:
+    output_shape:
+    - 0
+    - 0
+    - 0
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_2._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_2._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  add_3:
+    output_shape:
+    - 0
+    - 0
+    - 0
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_3._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_3._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  floordiv:
+    output_shape:
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: floordiv._input_0_quantizer
+        input_dtype: int
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: floordiv._input_1_quantizer
+        input_dtype: int
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  mul_1:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_1._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_1._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 1
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_2:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_2._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_2._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 1
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_4:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_4._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_4._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_3:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_3._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_3._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 1
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_4:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_4._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_4._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 1
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_5:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 64
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_5._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_5._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  cat:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 1024
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat._input_quantizer.0
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat._input_quantizer.1
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 960
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  cat_1:
+    output_shape:
+    - 1
+    - 1422
+    - 4
+    - 1024
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_1._input_quantizer.0
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 64
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_1._input_quantizer.1
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4
+        - 960
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  cat_2:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1024
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_2._input_quantizer.0
+        input_dtype: torch.float32
+        input_shape:
+        - 0
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+        output_layer: true
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_2._input_quantizer.1
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+        output_layer: true
+  cat_3:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1024
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_3._input_quantizer.0
+        input_dtype: torch.float32
+        input_shape:
+        - 0
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+        output_layer: true
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: cat_3._input_quantizer.1
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+        output_layer: true
+  sub_1:
+    output_shape:
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: sub_1._input_0_quantizer
+        input_dtype: int
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: sub_1._input_1_quantizer
+        input_dtype: int
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  matmul:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1422
+    quant_desc_input_0:
+      dtype: int8
+      axis: 1
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: matmul._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: int8
+      axis: 1
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: matmul._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1024
+        - 1422
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+  truediv:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1422
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: truediv._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: truediv._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape: []
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_6:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1422
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_6._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_6._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1
+        - 1
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  softmax:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1422
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: softmax._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1422
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  matmul_1:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1024
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: matmul_1._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1422
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: int8
+      axis: 1
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: matmul_1._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 8
+        per_ch: true
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: minmax
+        calibrator_method: minmax
+        asymmetric: true
+        do_quant: true
+        do_zp_equalizing: false
+  add_7:
+    output_shape:
+    - 0
+    - 0
+    - 0
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_7._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_7._input_1_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+  mul_5:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_5._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_5._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_6:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_6._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_6._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_8:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_8._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_8._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_7:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_7._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_7._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_9:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_9._input_0_quantizer
+        input_dtype: float
+        input_shape:
+        - 0
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: false
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_9._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  mul_8:
+    output_shape:
+    - 1
+    - 1422
+    - 16384
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_8._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: mul_8._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 16384
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_10:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_10._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_10._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  add_11:
+    output_shape:
+    - 1
+    - 1422
+    - 4096
+    quant_desc_input_0:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_11._input_0_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+    quant_desc_input_1:
+      dtype: bf16
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: add_11._input_1_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1422
+        - 4096
+        nbits: 16
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  output_0_quantize_node:
+    output_shape:
+    - 1
+    - 1
+    - 1422
+    - 50401
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: output_0_quantize_node._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 1
+        - 1422
+        - 50401
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  output_1_quantize_node:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1024
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: output_1_quantize_node._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false
+  output_2_quantize_node:
+    output_shape:
+    - 1
+    - 4
+    - 1422
+    - 1024
+    quant_desc_input:
+      dtype: fp32
+      axis: null
+      dynamic: false
+      etc_for_MCLab:
+        torch_name: output_2_quantize_node._input_quantizer
+        input_dtype: torch.float32
+        input_shape:
+        - 1
+        - 4
+        - 1422
+        - 1024
+        nbits: 32
+        per_ch: false
+        if_per_channel_scaling: false
+        group_size: null
+        unsigned: false
+        calibrator_type: None
+        calibrator_method: None
+        asymmetric: false
+        do_quant: true
+        do_zp_equalizing: false

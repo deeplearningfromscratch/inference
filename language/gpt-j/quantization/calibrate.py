@@ -5,7 +5,7 @@ import sys
 import torch
 import yaml
 from torch.utils.data import DataLoader
-from transformers import AutoModelForCausalLM
+from transformers import AutoConfig, AutoModelForCausalLM
 
 import model_compressor  # isort:skip
 
@@ -34,11 +34,10 @@ def get_autoscale_calib_config(model_script, model, calib_dataloader):
     return autoscale_calib_cfg
 
 
-def load_pytorch_model(model_path, use_gpu):
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        device_map="auto" if not use_gpu else None,
-        low_cpu_mem_usage=True if not use_gpu else False,
+def load_pytorch_model(config_path, use_gpu):
+    config = AutoConfig.from_pretrained(config_path)
+    model = AutoModelForCausalLM.from_config(
+        config,
         torch_dtype=torch.float32,
     )
 
